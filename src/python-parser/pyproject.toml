@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "measurements_parser"
+version = "0.1.0"
+description = "A Python package to parse the measurements session files of the VIPV-APP project."
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0",
+]
+
+authors = [
+    {name = "Echedey Luis", email = "echedey.luis.alvarez@upm.es"},
+]
+
+[dependency-groups]
+test = [
+    "pytest",
+]
+dev = [
+    "flake8",
+    "ruff",
+]
+all = ["measurements_parser[test,dev]"]
+
+[tool.setuptools]
+packages = ["measurements_parser"]
+
+[tool.ruff]
+line-length = 79
