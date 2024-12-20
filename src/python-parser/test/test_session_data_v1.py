@@ -31,14 +31,16 @@ def test_SessionDataV1_from_file(session_data_v1):
     session_data = SessionDataV1.from_file(session_data_v1)
     assert session_data.start_instant == pd.Timestamp("2021-10-01T12:00:00Z")
     assert session_data.finish_instant == pd.Timestamp("2021-10-01T12:30:00Z")
-    assert session_data.beacons.columns.tolist() == [0, 1]
-    assert session_data.beacons.index.tolist() == [
-        "id",
+    assert session_data.beacons.columns.tolist() == [
         "tilt",
         "orientation",
         "description",
     ]
+    assert session_data.beacons.index.tolist() == [
+        "0x010203040506",
+        "0x010203040507",
+    ]
     assert (
-        session_data.beacons[0]["description"]
+        session_data.beacons.iloc[0]["description"]
         == "Soy la cosita más linda y mona de este mundo."
     )

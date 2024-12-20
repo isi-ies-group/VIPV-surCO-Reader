@@ -1,19 +1,19 @@
 {
-"version_scheme": 1,
-"start_instant": "2021-10-01T12:00:00Z",
-"finish_instant": "2021-10-01T12:30:00Z",
-"beacons": {
-  "0": {
-    "id": "id_of_beacon1",
-    "tilt": 0.0,
-    "orientation": 0.0,
-    "description": "U295IGxhIGNvc2l0YSBtw6FzIGxpbmRhIHkgbW9uYSBkZSBlc3RlIG11bmRvLg=="
-  },
-  "1": {
-    "id": "id_of_beacon2",
-    "tilt": 0.0,
-    "orientation": 0.0,
-    "description": "U295IGxhIGNvc2l0YSBtw6FzIGxpbmRhIHkgbW9uYSBkZSBlc3RlIG11bmRvLg=="
-  }
- }
+  "version_scheme": 1,
+  "start_instant": "2021-10-01T12:00:00Z",
+  "finish_instant": "2021-10-01T12:30:00Z",
+  "beacons": [
+    {
+      "id": "0x010203040506",
+      "tilt": 0.0,
+      "orientation": 0.0,
+      "description": "U295IGxhIGNvc2l0YSBtw6FzIGxpbmRhIHkgbW9uYSBkZSBlc3RlIG11bmRvLg=="
+    },
+    {
+      "id": "0x010203040507",
+      "tilt": 10.0,
+      "orientation": 180.0,
+      "description": "U295IGxhIGNvc2l0YSBtw6FzIGxpbmRhIHkgbW9uYSBkZSBlc3RlIG11bmRvLg=="
+    }
+  ]
 }

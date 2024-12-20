@@ -35,12 +35,11 @@ class SessionDataV1:
             raise ValueError("Invalid version scheme")
 
         beacons = pd.DataFrame(header["beacons"])
+        beacons = beacons.set_index("id")
         # decode descriptions from base64 in utf-8
-        beacons.loc["description"] = beacons.loc["description"].map(
+        beacons["description"] = beacons["description"].map(
             lambda incoded: b64decode(incoded).decode("utf-8")
         )
-        # change column index type to numeric
-        beacons.columns = beacons.columns.astype(int)
 
         return cls(
             pd.Timestamp(header["start_instant"]),
