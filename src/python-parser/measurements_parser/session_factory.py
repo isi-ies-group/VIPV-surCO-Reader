@@ -9,13 +9,14 @@ class SessionFactory:
     appropriate version scheme.
     """
 
-    def _deduce_version_scheme(self):
+    @classmethod
+    def _deduce_version_scheme(cls, file_path):
         """
         Read the header of the file and get the json version scheme.
         The header is defined as the first lines of the file, until an empty
         line is found.
         """
-        with open(self.file_path, "r") as file:
+        with open(file_path, "r") as file:
             header = []
             for line in file:
                 if line == "\n":
@@ -28,9 +29,8 @@ class SessionFactory:
         return header["version_scheme"]
 
     @classmethod
-    def from_file(self, file_path):
-        self.file_path = file_path
-        version_scheme = self._deduce_version_scheme()
+    def from_file(cls, file_path):
+        version_scheme = cls._deduce_version_scheme(file_path)
         match (version_scheme):
             case 1:
                 return SessionDataV1.from_file(file_path)
