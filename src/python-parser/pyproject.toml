@@ -2,9 +2,9 @@
 requires = ["setuptools"]
 
 [project]
-name = "measurements_parser"
+name = "surco_parser"
 version = "0.1.0"
-description = "A Python package to parse the measurements session files of the VIPV-APP project."
+description = "A Python package to parse the measurements session files of the surCO initiative."
 requires-python = ">=3.10"
 dependencies = [
     "pandas>=2.0",
@@ -22,10 +22,10 @@ dev = [
     "flake8",
     "ruff",
 ]
-all = ["measurements_parser[test,dev]"]
+all = ["surco_parser[test,dev]"]
 
 [tool.setuptools]
-packages = ["measurements_parser"]
+packages = ["surco_parser"]
 
 [tool.ruff]
 line-length = 79
