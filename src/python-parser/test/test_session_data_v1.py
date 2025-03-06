@@ -1,4 +1,4 @@
-from measurements_parser import SessionDataV1
+from surco_parser import SessionDataV1
 
 import pandas as pd
 import pytest

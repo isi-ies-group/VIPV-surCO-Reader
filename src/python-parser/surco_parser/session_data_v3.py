@@ -2,24 +2,33 @@ import pandas as pd
 
 import json
 from base64 import b64decode
+from zoneinfo import ZoneInfo
 
 
 class SessionDataV3:
     version_scheme = 3
-    timezone: str
-    start_instant: pd.Timestamp
-    finish_instant: pd.Timestamp
+    timezone: ZoneInfo
+    start_localized_instant: pd.Timestamp
+    finish_localized_instant: pd.Timestamp
     beacons: pd.DataFrame
     measurements: pd.DataFrame
 
     def __init__(
-        self, timezone, start_instant, finish_instant, beacons, measurements
+        self,
+        timezone,
+        start_localized_instant,
+        finish_localized_instant,
+        beacons,
+        measurements,
     ):
-        self.timezone = timezone
-        self.start_instant = start_instant
-        self.finish_instant = finish_instant
+        self.start_localized_instant = start_localized_instant
+        self.finish_localized_instant = finish_localized_instant
         self.beacons = beacons
         self.measurements = measurements
+        if isinstance(timezone, str):
+            self.timezone = ZoneInfo(timezone)
+        else:
+            self.timezone = timezone
 
     @classmethod
     def from_file(cls, file_path):
@@ -47,8 +56,8 @@ class SessionDataV3:
 
         return cls(
             header["timezone"],
-            pd.Timestamp(header["start_instant"]),
-            pd.Timestamp(header["finish_instant"]),
+            pd.Timestamp(header["start_localized_instant"]),
+            pd.Timestamp(header["finish_localized_instant"]),
             beacons,
             measurements,
         )
