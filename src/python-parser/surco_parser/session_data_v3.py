@@ -35,7 +35,7 @@ class SessionDataV3:
         header = "".join(header)
         header = json.loads(header)
 
-        if header["version_scheme"] != 1:
+        if header["version_scheme"] != cls.version_scheme:
             raise ValueError("Invalid version scheme")
 
         beacons = pd.DataFrame(header["beacons"])
