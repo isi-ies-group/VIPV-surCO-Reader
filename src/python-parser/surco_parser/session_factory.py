@@ -41,4 +41,4 @@ class SessionFactory:
             case 4:
                 return SessionDataV4.from_file(file_path)
             case _:
-                raise ValueError("Invalid version scheme")
+                raise ValueError(f"Invalid version scheme {version_scheme}")
