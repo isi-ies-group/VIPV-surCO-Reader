@@ -2,6 +2,7 @@ import json
 
 from .session_data_v1 import SessionDataV1
 from .session_data_v3 import SessionDataV3
+from .session_data_v4 import SessionDataV4
 
 
 class SessionFactory:
@@ -37,5 +38,7 @@ class SessionFactory:
                 return SessionDataV1.from_file(file_path)
             case 3:
                 return SessionDataV3.from_file(file_path)
+            case 4:
+                return SessionDataV4.from_file(file_path)
             case _:
                 raise ValueError("Invalid version scheme")
