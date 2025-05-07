@@ -26,6 +26,7 @@ class SessionDataV4:
 
     def __init__(
         self,
+        app_version,
         timezone,
         start_localized_instant,
         finish_localized_instant,
@@ -33,15 +34,16 @@ class SessionDataV4:
         beacons,
         measurements,
     ):
+        self.app_version = int(app_version)
+        if isinstance(timezone, str):
+            self.timezone = ZoneInfo(timezone)
+        else:
+            self.timezone = timezone
         self.start_localized_instant = start_localized_instant
         self.finish_localized_instant = finish_localized_instant
         self.device_info = device_info
         self.beacons = beacons
         self.measurements = measurements
-        if isinstance(timezone, str):
-            self.timezone = ZoneInfo(timezone)
-        else:
-            self.timezone = timezone
 
     @classmethod
     def from_file(cls, file_path):
@@ -68,6 +70,7 @@ class SessionDataV4:
         )
 
         return cls(
+            header["app_version"],
             header["timezone"],
             pd.Timestamp(header["start_localized_instant"]),
             pd.Timestamp(header["finish_localized_instant"]),

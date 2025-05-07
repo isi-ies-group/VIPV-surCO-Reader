@@ -1,0 +1,11 @@
+{"version_scheme":4,"app_version":"3","timezone":"Europe/Madrid","start_localized_instant":"2025-04-25T09:37:43.382428Z","finish_localized_instant":"2025-04-25T09:58:26.264283Z","device_info":{"manufacturer":"motorola","model":"moto g(30)","device":"caprip","android_version":"12","sdk_int":31},"beacons":[{"id":"0xc4ce3fcd3931","tilt":0.0,"orientation":0.0,"position":"","description":""}]}
+
+beacon_id,localized_timestamp,data,latitude,longitude,azimuth
+0xc4ce3fcd3931,11:37:44.429,1997,NaN,NaN,NaN
+0xc4ce3fcd3931,11:37:51.537,1997,NaN,NaN,NaN
+0xc4ce3fcd3931,11:37:58.620,1997,40.453426,-3.7270575,NaN
+0xc4ce3fcd3931,11:38:08.816,1997,40.453426,-3.7270553,NaN
+0xc4ce3fcd3931,11:38:10.826,1997,40.453426,-3.7270553,NaN
+0xc4ce3fcd3931,11:38:13.839,1997,40.453426,-3.7270486,NaN
+0xc4ce3fcd3931,11:38:15.889,1997,40.453426,-3.7270486,NaN
+0xc4ce3fcd3931,11:38:20.970,1997,40.453426,-3.7270575,NaN
